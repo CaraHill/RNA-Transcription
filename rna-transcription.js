@@ -3,6 +3,9 @@ function toRna(dna) {
     return dna;
   }
 
+}
+
+function complement(dna) {
   if(dna == "C") {
     return "G";
   }
@@ -18,7 +21,13 @@ function toRna(dna) {
   if(dna == "T") {
     return "A";
   }
+
+  // javascript hash give key return value
 }
 
-
 export { toRna }
+
+// dna.split = array
+// array.map
+// value.complement
+// new_array.join
