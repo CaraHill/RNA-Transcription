@@ -1,33 +1,25 @@
 function toRna(dna) {
-  if(dna.length == 0) {
-    return dna;
-  }
+  let dnaArray = dna.split("");
 
+  let newDnaArray = dnaArray.map(function(dna) {
+    return findComplement(dna);
+  });
+
+  return newDnaArray.join("");
 }
 
-function complement(dna) {
-  if(dna == "C") {
-    return "G";
-  }
+function findComplement(dna) {
+  let dna_values = {'C':'G', 'G':'C', 'A':'U', 'T':'A'};
 
-  if(dna == "G") {
-    return "C";
-  }
+  for(let key of Object.keys(dna_values)) {
+    let value = dna_values[key]
 
-  if(dna == "A") {
-    return "U";
-  }
+    if(dna == key) {
+      return value;
+    }
 
-  if(dna == "T") {
-    return "A";
+    return "";
   }
-
-  // javascript hash give key return value
 }
 
 export { toRna }
-
-// dna.split = array
-// array.map
-// value.complement
-// new_array.join
