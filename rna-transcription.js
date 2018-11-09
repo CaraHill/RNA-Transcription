@@ -17,9 +17,9 @@ function findComplement(dna) {
     if(dna == key) {
       return value;
     }
-
-    return "";
   }
+
+  return "";
 }
 
 export { toRna }
