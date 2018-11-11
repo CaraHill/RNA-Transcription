@@ -1,11 +1,16 @@
 function toRna(dna) {
-  let dnaArray = dna.split("");
+  let dnaArray = dna.split('');
 
   let newDnaArray = dnaArray.map(function(dna) {
-    return findComplement(dna);
+    let rnaResult = findComplement(dna);
+    if(rnaResult == 'Invalid input DNA.') {
+      throw new Error(rnaResult);
+    }
+
+    return rnaResult;
   });
 
-  return newDnaArray.join("");
+  return newDnaArray.join('');
 }
 
 function findComplement(dna) {
@@ -17,9 +22,15 @@ function findComplement(dna) {
     if(dna == key) {
       return value;
     }
-  }
 
-  return "";
+    if(dna == '') {
+      return '';
+    }
+
+    if(dna == 'U') {
+      return 'Invalid input DNA.';
+    }
+  }
 }
 
 export { toRna }
