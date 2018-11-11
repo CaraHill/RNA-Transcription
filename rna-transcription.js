@@ -3,6 +3,7 @@ function toRna(dna) {
 
   let newDnaArray = dnaArray.map(function(dna) {
     let rnaResult = findComplement(dna);
+
     if(rnaResult == 'Invalid input DNA.') {
       throw new Error(rnaResult);
     }
@@ -17,7 +18,7 @@ function findComplement(dna) {
   let dna_values = {'C':'G', 'G':'C', 'A':'U', 'T':'A'};
 
   for(let key of Object.keys(dna_values)) {
-    let value = dna_values[key]
+    let value = dna_values[key];
 
     if(dna == key) {
       return value;
@@ -26,7 +27,6 @@ function findComplement(dna) {
     if(dna == '') {
       return '';
     }
-
   }
 
   return 'Invalid input DNA.';
