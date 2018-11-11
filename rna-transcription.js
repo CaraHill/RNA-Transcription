@@ -27,10 +27,9 @@ function findComplement(dna) {
       return '';
     }
 
-    if(dna == 'U') {
-      return 'Invalid input DNA.';
-    }
   }
+
+  return 'Invalid input DNA.';
 }
 
 export { toRna }
