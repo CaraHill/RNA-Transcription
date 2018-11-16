@@ -3,7 +3,7 @@ function toRna(dna) {
 
   let dnaArray = dna.split('');
 
-  let newDnaArray = dnaArray.map(function(dna) {
+  let newDnaArray = dnaArray.map(dna => {
     let rnaResult = findComplement(dna);
 
     if(rnaResult == null) {
